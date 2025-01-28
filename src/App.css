@@ -1,6 +1,6 @@
 :root {
-  --backround-color: #fff;
-  --btn-color: #0897f2;
+  --background-color: #fff;
+  --btn-color: #0987f2;
   --btn-text-color: #fff;
   --project-card-bg: #ffffff00;
   --text-color: #222;
@@ -9,7 +9,7 @@
 }
 
 [data-theme="dark"] {
-  --backround-color: #222;
+  --background-color: #222;
   --btn-color: #fff;
   --btn-text-color: #222;
   --project-card-bg: #fff;
@@ -19,7 +19,7 @@
 }
 
 body {
-  background-color: var(--backround-color);
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   margin: 0 auto 60px;
