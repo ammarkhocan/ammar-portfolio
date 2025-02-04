@@ -22,14 +22,13 @@ body {
   background-color: var(--background-color);
   display: flex;
   justify-content: center;
-  margin: 0 auto 60px;
+  margin: 0 auto 20px;
 }
 
-#root {
+/* #root {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-}
+} */
 
 h1,
 h2,
@@ -67,11 +66,16 @@ p {
 }
 
 .sectionTitle {
+  padding-top: 50px; /* Sesuaikan dengan tinggi navbar */
   margin-bottom: 30px;
 }
 
 .hover {
   cursor: pointer;
+}
+
+img {
+  width: 30%;
 }
 
 @media (width >= 800px) {

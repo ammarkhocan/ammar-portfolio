@@ -1,45 +1,46 @@
+import React from "react";
+import ProjectCard from "../../common/Card/ProjectCard";
 import styles from "./ProjectsStyle.module.css";
-import viberr from "../../assets/viberr.png";
-import ProjectCard from "../../common/ProjectCard";
+import gambar2 from "../../assets/vertigrow.png";
 
-function Projects() {
+const projects = [
+  {
+    title: "Vetigrow",
+    image: gambar2,
+    description: "Streaming App",
+    link: "https://www.google.co.uk/",
+  },
+  {
+    title: "Vetigrow",
+    image: gambar2,
+    description: "Streaming App",
+    link: "https://www.google.co.uk/",
+  },
+  {
+    title: "Vetigrow",
+    image: gambar2,
+    description: "Streaming App",
+    link: "https://www.google.co.uk/",
+  },
+];
+
+const Projects = () => {
   return (
-    <section id="projects" className={styles.container}>
+    <section id="projects" className={styles.projectsSection}>
       <h1 className="sectionTitle">Projects</h1>
       <div className={styles.projectsContainer}>
-        <ProjectCard
-          src={viberr}
-          link={"https://www.google.co.uk/"}
-          h3="Viberr"
-          p="Streaming App"
-        />
-        <ProjectCard
-          src={viberr}
-          link={"https://www.google.co.uk/"}
-          h3="Viberr"
-          p="Streaming App"
-        />
-        <ProjectCard
-          src={viberr}
-          link={"https://www.google.co.uk/"}
-          h3="Viberr"
-          p="Streaming App"
-        />
-        <ProjectCard
-          src={viberr}
-          link={"https://www.google.co.uk/"}
-          h3="Viberr"
-          p="Streaming App"
-        />
-        <ProjectCard
-          src={viberr}
-          link={"https://www.google.co.uk/"}
-          h3="Viberr"
-          p="Streaming App"
-        />
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            title={project.title}
+            image={project.image}
+            description={project.description}
+            link={project.link}
+          />
+        ))}
       </div>
     </section>
   );
-}
+};
 
 export default Projects;

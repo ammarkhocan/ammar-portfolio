@@ -1,39 +1,108 @@
-.container {
+/* Mengatur tampilan utama section Projects */
+.projectsSection {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Memastikan semua elemen terpusat secara horizontal */
+  justify-content: center; /* Memastikan konten terpusat secara vertikal jika perlu */
   text-align: center;
-
-  img {
-    max-width: 250px;
-    align-self: center;
-    background-color: var(--project-card-bg);
-    border-radius: 20px;
-  }
-
-  a {
-    width: fit-content;
-    text-decoration: none;
-    color: #222;
-    transition: transform 200ms ease-in-out;
-  }
-
-  a:hover {
-    transform: scale(1.05);
-  }
+  text-align: center;
+  padding: 50px 40px;
+  /* border: solid 1px red; */
+  margin-top: 16px;
+  font-family: "Roboto Mono", monospace;
 }
 
+/* Gaya untuk judul "Projects" agar berada di tengah */
+.sectionTitle {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Memastikan teks di tengah horizontal */
+  align-items: center; /* Memastikan teks di tengah vertikal */
+  font-size: 2.5rem; /* Memperbesar ukuran font */
+  font-weight: bold;
+  color: #333; /* Warna teks agar lebih kontras */
+}
+
+/* Container utama untuk daftar proyek */
 .projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 kolom */
+  gap: 20px; /* Jarak antar card */
+  width: 100%;
+  max-width: 1400px; /* Batas lebar maksimal */
+  margin: 0 auto; /* Tengah */
+}
+
+/* Styling kartu proyek */
+.projectCard {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  background: #f8f8f8; /* Warna latar belakang kartu */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
 }
 
-@media (width >= 800px) {
+/* Efek hover pada kartu proyek */
+.projectCard:hover {
+  transform: scale(1.05);
+}
+
+/* Gaya gambar dalam kartu proyek */
+.projectCard img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background-color: var(--project-card-bg);
+}
+
+/* Gaya link proyek */
+.projectCard a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.projectCard a:hover {
+  color: #007bff;
+}
+
+/* Responsif: Atur tata letak pada layar besar */
+@media (min-width: 800px) {
   .projectsContainer {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0 30px;
+    justify-content: center;
+  }
+
+  .projectCard {
+    width: 45%;
+  }
+}
+
+/* Responsif: Untuk layar lebih besar */
+@media (min-width: 1200px) {
+  .projectCard {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projectsContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 card per baris */
+  }
+}
+
+@media (max-width: 768px) {
+  .projectsContainer {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per baris di layar kecil */
   }
 }

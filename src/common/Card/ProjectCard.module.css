@@ -1,0 +1,119 @@
+/* ProjectCard.module.css */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 400px;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mode Light */
+.light {
+  background-color: #333; /* Card tetap hitam */
+  color: #fff;
+}
+
+/* Mode Dark */
+.dark {
+  background-color: #fff; /* Card tetap putih */
+  color: #333;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Gambar proyek tetap stabil */
+.projectImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: none; /* Menghindari efek transisi warna yang naik */
+}
+
+/* Card Content */
+.cardContent {
+  padding: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mode Light (background hitam, teks putih) */
+.lightContent {
+  background-color: #222; /* Hanya bagian bawah yang berubah */
+  color: #fff;
+}
+
+/* Mode Dark (background putih, teks hitam) */
+.darkContent {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.darkContent .cardTitle {
+  color: #333;
+}
+
+.lightContent .cardTitle {
+  color: #fff;
+}
+
+/* Judul */
+.cardTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 16px 0 8px;
+}
+
+/* Deskripsi */
+.cardDescription {
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Deskripsi di Light Mode */
+.lightContent .cardDescription {
+  color: #ccc;
+}
+
+/* Deskripsi di Dark Mode */
+.darkContent .cardDescription {
+  color: #333;
+}
+
+/* Link */
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.cardLink i {
+  font-size: 18px;
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.cardLink:hover i {
+  transform: translateX(2px) translateY(-1px);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .projectImage {
+    height: 150px;
+  }
+}

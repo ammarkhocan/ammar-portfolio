@@ -1,0 +1,105 @@
+/* Navbar Style */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Menjaga spasi antara logo dan tombol */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--background-color);
+  width: 96%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto Mono", monospace;
+  cursor: pointer;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Navigasi */
+.navLinks {
+  margin-right: 180px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Link Navigasi */
+.navLinks li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navLinks li a:hover {
+  color: var(--btn-color);
+  transform: scale(1.05);
+}
+
+/* Tombol Color Mode */
+.themeButton {
+  width: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.themeButton:hover {
+  transform: scale(1.1);
+}
+
+/* Tombol Menu (Mobile) */
+.toggleButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .toggleButton {
+    display: block;
+    position: absolute;
+    right: 4rem; /* Sesuaikan agar tidak terlalu ke kanan */
+    margin-bottom: 4px;
+  }
+
+  .navLinks {
+    /* border: solid 1px red; */
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 73%;
+    left: 0;
+    width: 80%;
+    background-color: var(--background-color);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+
+  /* Tombol Color Mode di Mobile */
+  .themeButton {
+    display: block;
+    position: absolute;
+    right: 7rem; /* Agar tidak terlalu dekat dengan toggle */
+    width: 20px;
+  }
+}

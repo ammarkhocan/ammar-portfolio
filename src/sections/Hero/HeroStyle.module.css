@@ -4,13 +4,9 @@
   justify-content: center;
   gap: 20px;
   text-align: center;
-  height: 100dvh;
+  height: 90vh;
   min-height: 500px;
-
-  /* foto */
-  .hero {
-    max-width: 200px;
-  }
+  margin-top: 65px;
 
   /* Logo sosial media */
   span {
@@ -52,6 +48,11 @@
     transform: translateY(2px);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
+}
+
+/* foto */
+.hero {
+  max-width: 200px;
 }
 
 /* Toggle mode dark/light */

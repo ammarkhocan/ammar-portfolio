@@ -1,0 +1,36 @@
+.backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--background-color); /* Menggunakan warna tema */
+  color: var(--text-color); /* Ikuti warna teks sesuai tema */
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.backToTop.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Saat hover, warna mengikuti tema */
+.backToTop:hover {
+  background-color: var(--text-color); /* Warna teks menjadi background */
+  color: var(--background-color); /* Warna background menjadi teks */
+}
+
+/* Mengatur ikon agar pas di dalam tombol */
+.backToTop i {
+  font-size: 40px;
+}

@@ -1,18 +1,22 @@
 import "./App.css";
+import BackToTop from "./common/Backtotop/BackToTop";
 import Contact from "./sections/Contact/Contact";
 import Footer from "./sections/Footer/Footer";
-import Hero from "./sections/Hero/hero";
-import Projects from "./sections/Projects/projects";
+import Hero from "./sections/Hero/Hero";
+import Navbar from "./sections/Navbar/Navbar";
+import Projects from "./sections/Projects/Projects";
 import Skills from "./sections/Skills/Skills";
 
 function App() {
   return (
     <>
+      <Navbar />
       <Hero />
-      <Projects />
       <Skills />
+      <Projects />
       <Contact />
       <Footer />
+      <BackToTop />
     </>
   );
 }
