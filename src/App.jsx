@@ -6,6 +6,7 @@ import Hero from "./sections/Hero/Hero";
 import Navbar from "./sections/Navbar/Navbar";
 import Projects from "./sections/Projects/Projects";
 import Skills from "./sections/Skills/Skills";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Contact />
       <Footer />
       <BackToTop />
+      <Toaster /> {/* Add this line */}
     </>
   );
 }

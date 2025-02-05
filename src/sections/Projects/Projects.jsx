@@ -7,8 +7,8 @@ const projects = [
   {
     title: "Vetigrow",
     image: gambar2,
-    description: "Streaming App",
-    link: "https://www.google.co.uk/",
+    description: "Education Website",
+    link: "https://github.com/VertiGrow-IL",
   },
   {
     title: "Vetigrow",

@@ -4,6 +4,8 @@ import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
 import twitterLight from "../../assets/twitter-light.svg";
 import twitterDark from "../../assets/twitter-dark.svg";
+import instagramLight from "../../assets/instagram-light.svg";
+import instagramDark from "../../assets/instagram-dark.svg";
 import githubLight from "../../assets/github-light.svg";
 import githubDark from "../../assets/github-dark.svg";
 import linkedinLight from "../../assets/linkedin-light.svg";
@@ -15,6 +17,7 @@ function Hero() {
   const { theme, toggleTheme } = useTheme();
 
   const themeIcon = theme === "light" ? sun : moon;
+  const instagramIcon = theme === "light" ? instagramLight : instagramDark;
   const twitterIcon = theme === "light" ? twitterLight : twitterDark;
   const githubIcon = theme === "light" ? githubLight : githubDark;
   const linkedinIcon = theme === "light" ? linkedinLight : linkedinDark;
@@ -26,21 +29,25 @@ function Hero() {
       </div>
       <div className={styles.info}>
         <h1>Ammar Ismail Khocan</h1>
-        <h2>Front End Developer</h2>
+        <h2>Web Developer</h2>
         <span>
-          <a href="" target="_blank">
-            <img src={twitterIcon} alt="Twitter icon" />
-          </a>
-          <a href="" target="_blank">
-            <img src={githubIcon} alt="Github icon" />
-          </a>
-          <a href="" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/ammarismailkhocan/"
+            target="_blank"
+          >
             <img src={linkedinIcon} alt="Linkedin icon" />
+          </a>
+          <a href="https://www.instagram.com/ammarkhocan/" target="_blank">
+            <img src={instagramIcon} alt="Twitter icon" />
+          </a>
+          <a href="https://github.com/ammarkhocan" target="_blank">
+            <img src={githubIcon} alt="Github icon" />
           </a>
         </span>
         <p className={styles.description}>
-          With a passion for developing modern React web apps for commercial
-          businesses.
+          Enthusiastic about learning and developing modern web applications
+          using React and JavaScript. Continuously improving my skills in
+          frontend and backend development. 🚀🐱‍💻👾
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
