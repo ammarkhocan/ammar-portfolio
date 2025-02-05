@@ -47,7 +47,7 @@ function Hero() {
         <p className={styles.description}>
           Enthusiastic about learning and developing modern web applications
           using React and JavaScript. Continuously improving my skills in
-          frontend and backend development.
+          frontend and backend development. 🚀🐱‍💻👾
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
