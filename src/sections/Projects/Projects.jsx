@@ -1,26 +1,28 @@
 import React from "react";
 import ProjectCard from "../../common/Card/ProjectCard";
 import styles from "./ProjectsStyle.module.css";
-import gambar2 from "../../assets/vertigrow.png";
+import gambar1 from "../../assets/vertigrow.png";
+import gambar2 from "../../assets/notes.png";
+import gambar3 from "../../assets/fun.png";
 
 const projects = [
   {
     title: "Vetigrow",
-    image: gambar2,
+    image: gambar1,
     description: "Education Website",
     link: "https://github.com/VertiGrow-IL",
   },
   {
-    title: "Vetigrow",
+    title: "Personal Notes",
     image: gambar2,
-    description: "Streaming App",
-    link: "https://www.google.co.uk/",
+    description: "Note-Taking App",
+    link: "https://github.com/ammarkhocan/notes-react",
   },
   {
-    title: "Vetigrow",
-    image: gambar2,
-    description: "Streaming App",
-    link: "https://www.google.co.uk/",
+    title: "English Fun",
+    image: gambar3,
+    description: "Education landing Page",
+    link: "https://ammarkhocan.github.io/submission-web-dasar/",
   },
 ];
 

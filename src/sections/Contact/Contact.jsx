@@ -1,11 +1,15 @@
-import styles from "./ContactStyle.module.css";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
+import styles from "./ContactStyle.module.css";
 
 function Contact() {
+  const [loading, setLoading] = useState(false);
+
   const onSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    setLoading(true); // Aktifkan loading state
 
+    const formData = new FormData(event.target);
     formData.append("access_key", "2cb99820-160d-47f9-83e2-ac7654ee5871");
 
     const object = Object.fromEntries(formData);
@@ -19,23 +23,27 @@ function Contact() {
           Accept: "application/json",
         },
         body: json,
-      }).then((res) => res.json());
+      });
 
-      if (res.success) {
+      const result = await res.json(); // Parsing JSON secara terpisah
+
+      if (result.success) {
         toast.success("Message sent successfully!");
-        event.target.reset(); // Clear the form
+        event.target.reset(); // Kosongkan form setelah sukses
       } else {
-        toast.error("Oops! Something went wrong.");
+        toast.error("Failed to send message. Please try again.");
       }
     } catch (error) {
-      toast.error("This didn't work.");
+      toast.error("Network error. Please check your connection.");
+    } finally {
+      setLoading(false); // Matikan loading state setelah selesai
     }
   };
 
   return (
     <section id="contact" className={styles.container}>
       <h1 className="sectionTitle">Contact</h1>
-      <form action="" onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <div className="formGrup">
           <label htmlFor="name" hidden>
             Name
@@ -53,7 +61,7 @@ function Contact() {
             Email
           </label>
           <input
-            type="text"
+            type="email"
             name="email"
             id="email"
             placeholder="Email"
@@ -62,7 +70,7 @@ function Contact() {
         </div>
         <div className="formGrup">
           <label htmlFor="message" hidden>
-            message
+            Message
           </label>
           <textarea
             name="message"
@@ -71,7 +79,12 @@ function Contact() {
             required
           ></textarea>
         </div>
-        <input className="hover btn" type="submit" value="submit" />
+        <input
+          className="hover btn"
+          type="submit"
+          value={loading ? "Sending..." : "Submit"}
+          disabled={loading}
+        />
       </form>
     </section>
   );

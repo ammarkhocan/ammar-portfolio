@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       {/* Logo sebagai Home */}
       <Link to="hero" smooth={true} duration={500} className={styles.logo}>
-        My Portfolio
+        Markho.
       </Link>
 
       {/* Tombol Menu Mobile */}
